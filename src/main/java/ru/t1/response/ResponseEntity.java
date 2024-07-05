@@ -4,9 +4,9 @@ public class ResponseEntity<T> {
   private final String rawResponse;
   private final T response;
 
-  public ResponseEntity(String rawResponse, T jsonResponse) {
+  public ResponseEntity(String rawResponse, T response) {
     this.rawResponse = rawResponse;
-    this.response = jsonResponse;
+    this.response = response;
   }
 
   public String getRawResponse() {

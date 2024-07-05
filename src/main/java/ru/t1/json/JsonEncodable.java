@@ -1,8 +1,8 @@
 package ru.t1.json;
 
-public interface JsonEncodable<T>extends JsonConvertible {
+public interface JsonEncodable extends JsonConvertible {
 
-  static <T extends JsonDecodable<T>> String encode(Class<T> clazz) throws Exception {
-    return objectMapper.writeValueAsString(clazz);
+  default String encode() throws Exception {
+    return objectMapper.writeValueAsString(this);
   }
 }

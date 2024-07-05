@@ -3,16 +3,13 @@ package ru.t1.response;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-public class GetCodeResponse {
-  String code;
+public class GetCodeResponse extends MessageResponse{
 
-  public GetCodeResponse(String code) {
-    this.code = code;
+  public GetCodeResponse(String message) {
+    super(message);
   }
 
-  @NotNull
-  @Contract(value = "_ -> new", pure = true)
-  public static GetCodeResponse fromHttpResponse(String response) {
-    return new GetCodeResponse(response);
+  public String getCode(){
+    return getMessage();
   }
 }
